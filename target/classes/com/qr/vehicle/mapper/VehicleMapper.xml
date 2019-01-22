@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qr.vehicle.dao.VehicleDao">
+ 
+<resultMap type="com.qr.xxpt.entity.Vehicle" id="VehicleMap">
+<result column="sale_date" property="sale_date"/>
+<result column="dealcount" property="dealcount"/>
+</resultMap>
+<select id="getVehicle" resultMap="VehicleMap">
+select sale_date,dealcount from deal;
+</select>
+
+<resultMap type="com.qr.xxpt.entity.Ranking" id="RabkingMap">
+<result column="province"  property="province"/>
+<result column="dealcount"  property="dealcount"/>
+</resultMap>
+<select id="getRabking" resultMap="RabkingMap">
+select province,dealcount from ranking;
+</select>
+
+<resultMap type="com.qr.xxpt.entity.Price" id="priceMap">
+<result column="pricenumber"  property="priceNumber"/>
+<result column="pricecount"  property="priceCount"/>
+</resultMap>
+<select id="getPrice" resultMap="priceMap">
+select pricenumber,pricecount from price;
+</select>
+
+</mapper>
